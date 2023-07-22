@@ -15,6 +15,7 @@
       nil
       nix
       nixpkgs-fmt
+      cachix
     ];
   };
 }
