@@ -1,7 +1,7 @@
 # nur-packages
 This repo contains packages for vhs-decoding on NixOS.
 
-![Build and populate cache](https://github.com/JuniorIsAJitterbug/nur-packages/workflows/Build/badge.svg)
+![Build and populate cache](https://github.com/JuniorISAJitterbug/nur-packages/workflows/Build%20and%20populate%20cache/badge.svg)
 [![Cachix Cache](https://img.shields.io/badge/cachix-jitterbug-blue.svg)](https://jitterbug.cachix.org)
 
 
