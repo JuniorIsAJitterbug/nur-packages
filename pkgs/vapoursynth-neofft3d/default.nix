@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   version = "11";
 
   src = fetchFromGitHub {
-    owner = "HomeOfVapourSynthEvolution";
+    owner = "HomeOfAviSynthPlusEvolution";
     repo = "neo_FFT3d";
     rev = "r${version}";
     sha256 = "sha256-m+Gu2ufwL3GelEQgPCGAaqP9At/D3Mi40bFYWE1YoDc=";
