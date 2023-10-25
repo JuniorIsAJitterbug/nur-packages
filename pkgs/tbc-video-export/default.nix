@@ -5,13 +5,13 @@
 
 python3Packages.buildPythonPackage rec {
   pname = "tbc-video-export";
-  version = "0.0.11";
+  version = "0.0.12";
 
   src = fetchFromGitHub {
     owner = "JuniorIsAJitterbug";
     repo = "tbc-video-export";
     rev = "v${version}";
-    sha256 = "sha256-Mcye+rufcxdj9ErR2FNmO11hRIzUYJIc6AXXCG8MqAg=";
+    sha256 = "sha256-LegHQRlTYZaJeVi83WY+PgMpuIBWWtHdXKD27Yjv4go=";
   };
 
   dontBuild = true;
