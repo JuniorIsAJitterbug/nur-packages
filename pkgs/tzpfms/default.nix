@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
     rev = "v${version}";
     owner = "~nabijaczleweli";
     repo = name;
-    sha256 = "sha256-BrxWAGHR37Tsi4cu0phx7XT0SH+wbxWi24bk41nWcHk=";
+    sha256 = "sha256-tfIFBQZQr+kwqdSJoWkSq+30R62JcbBWF1s0xJvh7Cc=";
     leaveDotGit = true;
     fetchSubmodules = true; # required for leaveDotGit to work
   };
