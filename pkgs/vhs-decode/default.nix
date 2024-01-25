@@ -15,7 +15,7 @@
 let
   # we need a valid version for SETUPTOOLS_SCM
   version = "0.2.4";
-  rev = "sha256-sjjN42ViIPCthbIM3RhjQirBXErKPCGFXtLd9OgD8QE=";
+  rev = "d46caf09128e4a98281100c6a6d28f09139d9ae3";
 
   src = fetchFromGitHub {
     inherit rev;
