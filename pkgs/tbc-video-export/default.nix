@@ -13,7 +13,7 @@ python3Packages.buildPythonPackage rec {
   src = fetchPypi {
     inherit version;
     pname = builtins.replaceStrings [ "-" ] [ "_" ] pname;
-    sha256 = "sha256-yrB4wyPElh+spfTk2ti42wjRezAy05hhir4i+eYpsbo=";
+    sha256 = "sha256-a6fUIOdJ6/QNxUlX2FpKaka+C6qbPM0HdSxsXaZAtSQ=";
   };
 
   buildInputs = [
