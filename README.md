@@ -15,7 +15,7 @@ This repo contains packages for vhs-decoding on NixOS.
 - [vapoursynth-bwdif](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Bwdif) - Bwdif filter for VapourSynth. (required for QTGMC)
 - [vapoursynth-neofft3d](https://github.com/HomeOfAviSynthPlusEvolution/neo_FFT3D) - Neo FFT3D (forked from fft3dfilter) is a 3D Frequency Domain filter - strong denoiser and moderate sharpener.
 - [vapoursynth-vsrawsource](https://github.com/JuniorIsAJitterbug/vsrawsource) - Raw format reader for VapourSynth.
-- [pyhht](https://github.com/jaidevd/pyhht) - A Python module for the Hilbert Huang Transform. (required for vhs-decode)
+- [pyhht](https://github.com/jaidevd/pyhht) - A Python module for the Hilbert Huang Transform. (required for old vhs-decode builds)
 - [amcdx-video-patcher-cli](https://mogurenko.com) - AMCDX Video Patcher CLI.
 - [ltfs](https://github.com/LinearTapeFileSystem/ltfs) - Reference LTFS implementation.
 - [stfs](https://github.com/pojntfx/stfs) - Simple Tape File System (STFS), a file system for tapes and tar files.
