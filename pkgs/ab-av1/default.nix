@@ -1,6 +1,7 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
+, installShellFiles
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -15,6 +16,10 @@ rustPlatform.buildRustPackage rec {
   };
 
   cargoHash = "sha256-sW/673orvK+mIUqTijpNh4YGd9ZrgSveGT6F1O5OYfI=";
+
+  nativeBuildInputs = [
+    installShellFiles
+  ];
 
   postInstall = ''
     installShellCompletion --cmd $pname \
