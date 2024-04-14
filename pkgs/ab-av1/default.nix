@@ -1,7 +1,6 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
-, ffmpeg
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -16,10 +15,6 @@ rustPlatform.buildRustPackage rec {
   };
 
   cargoHash = "sha256-sW/673orvK+mIUqTijpNh4YGd9ZrgSveGT6F1O5OYfI=";
-
-  propagatedBuildInputs = [
-    ffmpeg
-  ];
 
   meta = with lib; {
     description = "AV1 video encoding tool with fast VMAF sampling & automatic encoder crf calculation.";
