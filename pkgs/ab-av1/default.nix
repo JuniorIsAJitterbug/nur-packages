@@ -16,6 +16,13 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-sW/673orvK+mIUqTijpNh4YGd9ZrgSveGT6F1O5OYfI=";
 
+  postInstall = ''
+    installShellCompletion --cmd $pname \
+      --bash <($out/bin/ab-av1 print-completions bash) \
+      --fish <($out/bin/ab-av1 print-completions fish) \
+      --zsh <($out/bin/ab-av1 print-completions zsh)
+  '';
+
   meta = with lib; {
     description = "AV1 video encoding tool with fast VMAF sampling & automatic encoder crf calculation.";
     homepage = "https://github.com/alexheretic/ab-av1";
