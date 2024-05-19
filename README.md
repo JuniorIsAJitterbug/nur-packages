@@ -13,7 +13,6 @@ This repo contains packages for vhs-decoding on NixOS.
 - [domesdayduplicator](https://github.com/harrypm/DomesdayDuplicator) - The Domesday Duplicator is a USB3 based DAQ capable of 40 million samples per second (20mhz of bandwith) aquisition of analogue RF data.
 - [misrc-extract](https://github.com/Stefan-Olt/MISRC) - Tool to extract the two ADC channels and the AUX data from the raw capture.
 - [vapoursynth-bwdif](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Bwdif) - Bwdif filter for VapourSynth. (required for QTGMC)
-- [vapoursynth-median](https://github.com/dubhater/vapoursynth-median) - Median generates a pixel-by-pixel median of several clips.
 - [vapoursynth-neofft3d](https://github.com/HomeOfAviSynthPlusEvolution/neo_FFT3D) - Neo FFT3D (forked from fft3dfilter) is a 3D Frequency Domain filter - strong denoiser and moderate sharpener.
 - [vapoursynth-vsrawsource](https://github.com/JuniorIsAJitterbug/vsrawsource) - Raw format reader for VapourSynth.
 - [pyhht](https://github.com/jaidevd/pyhht) - A Python module for the Hilbert Huang Transform. (required for old vhs-decode builds)

@@ -9,7 +9,6 @@
   vapoursynth-bwdif = pkgs.callPackage ./pkgs/vapoursynth-bwdif { };
   vapoursynth-neofft3d = pkgs.callPackage ./pkgs/vapoursynth-neofft3d { };
   vapoursynth-vsrawsource = pkgs.callPackage ./pkgs/vapoursynth-vsrawsource { };
-  vapoursynth-median = pkgs.callPackage ./pkgs/vapoursynth-median { };
   pyhht = pkgs.python3.pkgs.callPackage ./pkgs/pyhht { };
   qwt = pkgs.callPackage ./pkgs/qwt { useQt6 = false; };
   vhs-decode = pkgs.callPackage ./pkgs/vhs-decode { inherit qwt; useQt6 = false; };
