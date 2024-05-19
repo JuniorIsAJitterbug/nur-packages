@@ -11,8 +11,8 @@
   vapoursynth-vsrawsource = pkgs.callPackage ./pkgs/vapoursynth-vsrawsource { };
   vapoursynth-median = pkgs.callPackage ./pkgs/vapoursynth-median { };
   pyhht = pkgs.python3.pkgs.callPackage ./pkgs/pyhht { };
-  qwt = pkgs.callPackage ./pkgs/qwt { };
-  vhs-decode = pkgs.callPackage ./pkgs/vhs-decode { inherit qwt; };
+  qwt = pkgs.callPackage ./pkgs/qwt { useQt6 = false; };
+  vhs-decode = pkgs.callPackage ./pkgs/vhs-decode { inherit qwt; useQt6 = false; };
   tbc-video-export = pkgs.python3.pkgs.callPackage ./pkgs/tbc-video-export { };
   domesdayduplicator = pkgs.callPackage ./pkgs/domesdayduplicator { };
   misrc-extract = pkgs.callPackage ./pkgs/misrc-extract { };
