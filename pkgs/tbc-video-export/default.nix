@@ -21,6 +21,10 @@ python3Packages.buildPythonPackage rec {
     poetry-dynamic-versioning
   ];
 
+  propagatedBuildInputs = with python3Packages; [
+    typing-extensions
+  ];
+
   meta = with lib; {
     description = "Cross-platform tool for exporting S-Video and CVBS-type TBC files to standard video files.";
     homepage = "https://github.com/JuniorIsAJitterbug/tbc-video-export";
