@@ -7,16 +7,16 @@ let
 in
 buildGoModule {
   inherit version;
-  pname = "stfs";
+  pname = "v0.1.1";
 
   src = fetchFromGitHub {
     rev = version;
     owner = "pojntfx";
     repo = "stfs";
-    sha256 = "sha256-qX7f1GegpWHVpVqmqHunXeFt1tQZU0vihMkEz2k/NZc=";
+    sha256 = "sha256-2dl7VK3mwasusNLiLfNVNjaNSEKo+eKyFwOwUDL9RzA=";
   };
 
-  vendorHash = "sha256-zynSreuSMOn8oGbilLbATyHDz9NmgxLWsE3FAKYqzeU=";
+  vendorHash = "sha256-uyW1k5pJpSOlVJ6bDxEM/nQYGdrw0Inbdh4PGgNl5go=";
   doCheck = false;
 
   meta = with lib; {
