@@ -3,11 +3,11 @@
 , fetchFromGitHub
 }:
 let
-  version = "8f2e83c3828b9cb9891766f31b695d5f80c63e75";
+  version = "v0.1.1";
 in
 buildGoModule {
   inherit version;
-  pname = "v0.1.1";
+  pname = "stfs";
 
   src = fetchFromGitHub {
     rev = version;
