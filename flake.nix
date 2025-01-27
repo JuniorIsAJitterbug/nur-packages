@@ -3,9 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, fenix }:
     let
       systems = [
         "x86_64-linux"
@@ -20,9 +24,13 @@
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
     in
     {
-      packages = forAllSystems (system: import ./default.nix {
-        pkgs = import nixpkgs { inherit system; };
-      });
+      packages = forAllSystems (system:
+        import ./default.nix {
+          pkgs = import nixpkgs {
+            inherit system;
+            overlays = [ fenix.overlays.default ];
+          };
+        });
 
       nixosModules = import ./modules;
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });

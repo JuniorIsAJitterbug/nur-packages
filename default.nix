@@ -1,4 +1,9 @@
-{ pkgs ? import <nixpkgs> { } }: rec
+{ system ? builtins.currentSystem
+, pkgs ? import <nixpkgs> {
+    inherit system;
+    overlays = [ (import (builtins.fetchTarball "https://github.com/nix-community/fenix/archive/master.tar.gz")) ];
+  }
+}: rec
 {
   modules = import ./modules;
   overlays = import ./overlays;
@@ -7,6 +12,7 @@
   amcdx-video-patcher-cli = pkgs.callPackage ./pkgs/amcdx-video-patcher-cli { };
   cxadc = pkgs.callPackage ./pkgs/cxadc { kernel = pkgs.linuxPackages.kernel; };
   cxadc-vhs-server = pkgs.callPackage ./pkgs/cxadc-vhs-server { useFlacSox = true; };
+  tbc-raw-stack = pkgs.callPackage ./pkgs/tbc-raw-stack { };
   domesdayduplicator = pkgs.callPackage ./pkgs/domesdayduplicator { };
   ltfs = pkgs.callPackage ./pkgs/ltfs { };
   misrc-extract = pkgs.callPackage ./pkgs/misrc-extract { };
