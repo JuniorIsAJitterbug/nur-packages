@@ -20,14 +20,14 @@ let
   qtVersion = if useQt6 then "6" else "5";
 
   # we need a valid version for SETUPTOOLS_SCM
-  version = "0.3.0";
-  rev = "4b3d2ebd55ee4ac178b8b37540f7bbf48a7c9a45";
+  version = "0.3.2";
+  rev = "5514c120ce56f8069e60d988cc26135019a37452";
 
   src = fetchFromGitHub {
     inherit rev;
     owner = "oyvindln";
     repo = "vhs-decode";
-    sha256 = "sha256-AJ/FAKrUt2qJbswcIhQ2z4WQvnNaC1SVBmGcJwA+GHw=";
+    sha256 = "sha256-zHFUr2Kf8ZE9R4LoXCB6Pfe/jE6VRanOjdVt0DcHfGA=";
   };
 
   py-vhs-decode = python3Packages.buildPythonApplication {

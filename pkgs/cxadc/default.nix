@@ -5,8 +5,8 @@
 }:
 
 let
-  version = "6ffc17cfb504b8d71da6fa84891e706558af3d40";
-  sha256 = "sha256-9k5uiRdhTdZs+SqluvefJL9z+9t+KjpPyZQTcv0ko3E=";
+  version = "8bb134d0ff47debc6fc1533b3fa4e07b60c3eb8b";
+  sha256 = "sha256-YUXKLTubIPHDUZgKBHCfOChYjG1udAbdHig49jxHEM0=";
 in
 stdenv.mkDerivation {
   name = "cxadc";

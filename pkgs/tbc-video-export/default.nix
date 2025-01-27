@@ -7,13 +7,13 @@
 
 python3Packages.buildPythonPackage rec {
   pname = "tbc-video-export";
-  version = "0.1.5";
+  version = "0.1.7";
   format = "pyproject";
 
   src = fetchPypi {
     inherit version;
     pname = builtins.replaceStrings [ "-" ] [ "_" ] pname;
-    sha256 = "sha256-KPb+WrnJtn7esDu2XTRz/ZSspXw5V9CXrHpiJZMbFdo=";
+    sha256 = "sha256-vV5zjbwmpRDtKD7TCWS/xuNuyfFUHudwKRhS+MItUvc=";
   };
 
   buildInputs = [
