@@ -36,8 +36,7 @@ stdenv.mkDerivation {
   ];
 
   installPhase = ''
-    mkdir -p $out/lib/vapoursynth
-    cp libneo-fft3d.so $out/lib/vapoursynth/libneo-fft3d.so
+    install -m755 -D libneo-fft3d.so $out/lib/vapoursynth/libneo-fft3d.so
   '';
 
   meta = with lib; {

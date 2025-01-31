@@ -26,9 +26,7 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    mkdir -p $out/lib/vapoursynth
-    ls -lh
-    cp libvsrawsource.so $out/lib/vapoursynth/libvsrawsource.so
+    install -m755 -D libvsrawsource.so $out/lib/vapoursynth/libvsrawsource.so
   '';
 
   meta = with lib; {

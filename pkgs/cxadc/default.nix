@@ -25,8 +25,7 @@ stdenv.mkDerivation {
 
   installPhase = ''
     install -D cxadc.ko $out/lib/modules/${kernel.modDirVersion}/misc/cxadc.ko
-    mkdir -p $out/bin
-    install -m 755 leveladj $out/bin/leveladj
+    install -m755 -D leveladj $out/bin/leveladj
   '';
 
   meta = with lib; {

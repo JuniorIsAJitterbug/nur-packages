@@ -21,6 +21,8 @@ stdenv.mkDerivation {
 
   dontWrapQtApps = true;
 
+  sourceRoot = "source/misrc_extract";
+
   nativeBuildInputs = [
     cmake
     pkg-config
@@ -29,10 +31,6 @@ stdenv.mkDerivation {
   buildInputs = [
     nasm
   ];
-
-  preConfigure = ''
-    cd misrc_extract
-  '';
 
   cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release"

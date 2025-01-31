@@ -35,8 +35,8 @@ stdenv.mkDerivation rec {
   '';
 
   postInstall = ''
-    cp libavx2.a $out/lib/vapoursynth/libavx2.a
-    cp libavx512.a $out/lib/vapoursynth/libavx512.a
+    install -m755 -D libavx2.a $out/lib/vapoursynth/libavx2.a
+    install -m755 -D libavx512.a $out/lib/vapoursynth/libavx512.a
   '';
 
   meta = with lib; {

@@ -3,6 +3,7 @@
 , fetchFromGitHub
 , fuse
 , icu66
+, autoreconfHook
 , autoconf
 , automake
 , libtool
@@ -24,6 +25,7 @@ stdenv.mkDerivation {
   };
 
   nativeBuildInputs = [
+    autoreconfHook
     autoconf
     automake
     libtool
@@ -37,10 +39,6 @@ stdenv.mkDerivation {
     libxml2
     libuuid
   ];
-
-  preConfigure = ''
-    ./autogen.sh
-  '';
 
   meta = with lib; {
     description = "Reference LTFS implementation.";

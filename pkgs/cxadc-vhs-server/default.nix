@@ -40,8 +40,8 @@ stdenv.mkDerivation rec {
   ] ++ lib.optionals useFlacSox [ flac sox ];
 
   installPhase = ''
-    install -D -m 755 cxadc_vhs_server -t $out/bin/
-    install -D -m 755 ../local-capture.sh $out/bin/cxadc-local-capture
+    install -m755 -D cxadc_vhs_server -t $out/bin/cxadc_vhs_server
+    install -m755 -D ../local-capture.sh $out/bin/cxadc-local-capture
   '';
 
   meta = {

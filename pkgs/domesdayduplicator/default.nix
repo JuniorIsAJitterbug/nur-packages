@@ -22,6 +22,8 @@ stdenv.mkDerivation {
 
   dontWrapQtApps = true;
 
+  sourceRoot = "source/Linux-Application";
+
   nativeBuildInputs = [
     cmake
     pkg-config
@@ -33,10 +35,6 @@ stdenv.mkDerivation {
     qt6.qtmultimedia
     libusb1
   ];
-
-  preConfigure = ''
-    cd Linux-Application
-  '';
 
   cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release"
