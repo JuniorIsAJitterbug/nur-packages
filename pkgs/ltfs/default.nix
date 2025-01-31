@@ -21,7 +21,7 @@ stdenv.mkDerivation {
     rev = "fd41c66ebf8be18bc8a6d88129d935713e03d42e";
     owner = "LinearTapeFileSystem";
     repo = "ltfs";
-    sha256 = "sha256-SDQSRiqyLA2xX/F7LSifQBelL3ayFy8D9aUSUnyZqPs=";
+    sha256 = "sha256-eCshucE56P7WkJ6FweenGQKR5BvLDUJEtfQtGmNDbts=";
   };
 
   nativeBuildInputs = [
