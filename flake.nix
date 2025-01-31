@@ -24,7 +24,7 @@
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
     in
     {
-      packages = forAllSystems (system:
+      legacyPackages = forAllSystems (system:
         import ./default.nix {
           pkgs = import nixpkgs {
             inherit system;
@@ -32,7 +32,23 @@
           };
         });
 
+      packages = forAllSystems (
+        system:
+        nixpkgs.lib.filterAttrs
+          (_: v: nixpkgs.lib.isDerivation v)
+          self.legacyPackages.${system}
+      );
+
       nixosModules = import ./modules;
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
     };
+
+  nixConfig = {
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
 }
