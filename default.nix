@@ -1,9 +1,4 @@
-{ system ? builtins.currentSystem
-, pkgs ? import <nixpkgs> {
-    inherit system;
-    overlays = [ (import (builtins.fetchTarball "https://github.com/nix-community/fenix/archive/master.tar.gz")) ];
-  }
-}: rec
+{ pkgs ? import <nixpkgs> { } }: rec
 {
   modules = import ./modules;
   overlays = import ./overlays;
