@@ -10,24 +10,33 @@
 , qt6
 , qwt
 , fftw
+, fenix
+, makeRustPlatform
 , useQt6 ? false
 , enableHiFiGui ? true
 , ...
 }:
 let
+  rustToolchain = fenix.default.toolchain;
+  rustPlatform = makeRustPlatform {
+    cargo = rustToolchain;
+    rustc = rustToolchain;
+  };
+
   qt = if useQt6 then qt6 else qt5;
   pyqt = if useQt6 then python3Packages.pyqt6 else python3Packages.pyqt5;
   qtVersion = if useQt6 then "6" else "5";
 
+  rev = "87329c21688c37d8bd0388b8daddf5405fd07dd4";
+  sha256 = "sha256-hQPyh4tuiLurC8M695ak/iFzsSVkObYUpYbM/lm9kQs=";
+
   # we need a valid version for SETUPTOOLS_SCM
-  version = "0.3.2";
-  rev = "5514c120ce56f8069e60d988cc26135019a37452";
+  version = "0.3.5";
 
   src = fetchFromGitHub {
-    inherit rev;
+    inherit rev sha256;
     owner = "oyvindln";
     repo = "vhs-decode";
-    sha256 = "sha256-zHFUr2Kf8ZE9R4LoXCB6Pfe/jE6VRanOjdVt0DcHfGA=";
   };
 
   py-vhs-decode = python3Packages.buildPythonApplication {
@@ -36,35 +45,49 @@ let
     format = "setuptools";
     doCheck = false;
 
-    # workaround for no .git
-    SETUPTOOLS_SCM_PRETEND_VERSION = version;
+    cargoDeps = rustPlatform.importCargoLock {
+      lockFile = ./Cargo.lock;
+    };
+
+    build-system = with python3Packages; [
+      setuptools_scm
+      setuptools-rust
+    ];
 
     buildInputs = [
       ffmpeg
     ]
     ++ lib.optionals enableHiFiGui (with qt; [ qtbase qtwayland wrapQtAppsHook ]);
 
-    nativeBuildInputs = with python3Packages; [
-      setuptools_scm
+    nativeBuildInputs = [
+      rustPlatform.cargoSetupHook
+      rustToolchain
     ];
 
-    propagatedBuildInputs = with python3Packages;
-      [
-        cython
-        numpy
-        jupyter
-        numba
-        pandas
-        scipy
-        matplotlib
-        soundfile
-        sounddevice
-        samplerate
-      ] ++ lib.optionals enableHiFiGui [ pyqt ];
+    propagatedBuildInputs = with python3Packages; [
+      cython
+      numpy
+      jupyter
+      numba
+      pandas
+      scipy
+      matplotlib
+      soundfile
+      sounddevice
+      samplerate
+    ] ++ lib.optionals enableHiFiGui [ pyqt ];
 
     postFixup = lib.optionalString enableHiFiGui ''
       wrapQtApp $out/bin/hifi-decode
     '';
+
+    pythonImportsCheck = [
+      "lddecode"
+      "vhsdecode"
+      "vhsdecode.hifi"
+      "cvbsdecode"
+      "vhsd_rust"
+    ];
   };
 
   vhs-decode-tools = stdenv.mkDerivation {

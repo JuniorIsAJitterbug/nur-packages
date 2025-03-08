@@ -22,7 +22,7 @@ rustPlatform.buildRustPackage {
     sha256 = "sha256-wJVfONhmzMwfrJq/jd63PeW7iPZ3u3hvHvBeP7wfoHI=";
   };
 
-  cargoHash = "sha256-w4XXTGCq6d2aGDC7vWZ1v5xHFlkpLhvGBxfC2821GeY=";
+  cargoLock.lockFile = ./Cargo.lock;
 
   meta = with lib; {
     description = "A median filter for TBCs that don't have VBI frame numbers, such as outputs of vhs-decode and cvbs-decode.";

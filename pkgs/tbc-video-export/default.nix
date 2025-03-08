@@ -1,22 +1,20 @@
 { lib
 , fetchPypi
 , python3Packages
-, poetry-core
-, poetry-dynamic-versioning
 }:
 
 python3Packages.buildPythonPackage rec {
   pname = "tbc-video-export";
-  version = "0.1.7";
+  version = "0.1.8";
   format = "pyproject";
 
   src = fetchPypi {
     inherit version;
     pname = builtins.replaceStrings [ "-" ] [ "_" ] pname;
-    sha256 = "sha256-vV5zjbwmpRDtKD7TCWS/xuNuyfFUHudwKRhS+MItUvc=";
+    sha256 = "sha256-mKbQ1CzbJSNRPZBuWSQYurZkN0ucjmVYNgDJ6MvoLdI=";
   };
 
-  buildInputs = [
+  buildInputs = with python3Packages; [
     poetry-core
     poetry-dynamic-versioning
   ];
