@@ -21,3 +21,4 @@ This repo contains packages for vhs-decoding on NixOS.
 - [ab-av1](https://github.com/alexheretic/ab-av1) - AV1 video encoding tool with fast VMAF sampling & automatic encoder crf calculation.
 - [ltfs](https://github.com/LinearTapeFileSystem/ltfs) - Reference LTFS implementation.
 - [stfs](https://github.com/pojntfx/stfs) - Simple Tape File System (STFS), a file system for tapes and tar files.
+- [ezpwd-reed-solomon](https://github.com/pjkundert/ezpwd-reed-solomon) - Reed-Solomon & BCH encoding and decoding, in C++, Javascript & Python.

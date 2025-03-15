@@ -19,6 +19,7 @@
   ltfs = pkgs.callPackage ./pkgs/ltfs { };
   misrc-extract = pkgs.callPackage ./pkgs/misrc-extract { };
   qwt = pkgs.callPackage ./pkgs/qwt { useQt6 = false; };
+  ezpwd-reed-solomon = pkgs.callPackage ./pkgs/ezpwd-reed-solomon { };
   stfs = pkgs.callPackage ./pkgs/stfs { };
   tbc-video-export = pkgs.python3.pkgs.callPackage ./pkgs/tbc-video-export { };
   vapoursynth-bwdif = pkgs.callPackage ./pkgs/vapoursynth-bwdif { };
