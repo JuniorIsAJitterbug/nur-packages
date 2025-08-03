@@ -16,8 +16,9 @@
   cxadc-vhs-server = pkgs.callPackage ./pkgs/cxadc-vhs-server { useFlacSox = true; };
   tbc-raw-stack = pkgs.callPackage ./pkgs/tbc-raw-stack { };
   domesdayduplicator = pkgs.callPackage ./pkgs/domesdayduplicator { };
+  hsdaoh = pkgs.callPackage ./pkgs/hsdaoh { };
   ltfs = pkgs.callPackage ./pkgs/ltfs { };
-  misrc-extract = pkgs.callPackage ./pkgs/misrc-extract { };
+  misrc-tools = pkgs.callPackage ./pkgs/misrc-tools { inherit hsdaoh; };
   qwt = pkgs.callPackage ./pkgs/qwt { useQt6 = true; };
   ezpwd-reed-solomon = pkgs.callPackage ./pkgs/ezpwd-reed-solomon { };
   stfs = pkgs.callPackage ./pkgs/stfs { };

@@ -13,7 +13,7 @@ This repo contains packages for vhs-decoding on NixOS.
 - [cxadc-vhs-server](https://github.com/namazso/cxadc_vhs_server) - A terrible HTTP server made for capturing VHS with two cxadc cards and cxadc-clock-generator-audio-adc or cxadc-clockgen-mod.
 - [tbc-raw-stack](https://github.com/namazso/tbc-raw-stack) - A median filter for TBCs that don't have VBI frame numbers, such as outputs of vhs-decode and cvbs-decode.
 - [domesdayduplicator](https://github.com/harrypm/DomesdayDuplicator) - The Domesday Duplicator is a USB3 based DAQ capable of 40 million samples per second (20mhz of bandwith) aquisition of analogue RF data.
-- [misrc-extract](https://github.com/Stefan-Olt/MISRC) - Tool to extract the two ADC channels and the AUX data from the raw capture.
+- [misrc-tools](https://github.com/Stefan-Olt/MISRC) - Tools for the MISRC project.
 - [vapoursynth-bwdif](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Bwdif) - Bwdif filter for VapourSynth. (required for QTGMC)
 - [vapoursynth-neofft3d](https://github.com/HomeOfAviSynthPlusEvolution/neo_FFT3D) - Neo FFT3D (forked from fft3dfilter) is a 3D Frequency Domain filter - strong denoiser and moderate sharpener.
 - [vapoursynth-vsrawsource](https://github.com/JuniorIsAJitterbug/vsrawsource) - Raw format reader for VapourSynth.
@@ -22,3 +22,4 @@ This repo contains packages for vhs-decoding on NixOS.
 - [ltfs](https://github.com/LinearTapeFileSystem/ltfs) - Reference LTFS implementation.
 - [stfs](https://github.com/pojntfx/stfs) - Simple Tape File System (STFS), a file system for tapes and tar files.
 - [ezpwd-reed-solomon](https://github.com/pjkundert/ezpwd-reed-solomon) - Reed-Solomon & BCH encoding and decoding, in C++, Javascript & Python.
+- [hsdaoh](https://github.com/Stefan-Olt/hsdaoh) - High Speed Data Acquisition over HDMI.

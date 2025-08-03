@@ -4,24 +4,25 @@
 , cmake
 , pkg-config
 , nasm
+, hsdaoh
+, ffmpeg
+, flac
 , ...
 }:
 let
-  rev = "misrc_extract-0.3.1";
+  rev = "misrc_tools-0.4";
 in
 stdenv.mkDerivation {
-  name = "misrc_extract";
+  name = "misrc_tools";
 
   src = fetchFromGitHub {
     inherit rev;
     owner = "Stefan-Olt";
     repo = "MISRC";
-    sha256 = "sha256-FCoPzwMUfEMkx0b+bj5kN0Nsz+XOmtImLzyuc4ZC39o=";
+    sha256 = "sha256-2jk5uoNpKyppGisvQoQrc3Uujd7vmNwGqYoQraDT0ck=";
   };
 
-  dontWrapQtApps = true;
-
-  sourceRoot = "source/misrc_extract";
+  sourceRoot = "source/misrc_tools";
 
   nativeBuildInputs = [
     cmake
@@ -30,6 +31,9 @@ stdenv.mkDerivation {
 
   buildInputs = [
     nasm
+    hsdaoh
+    ffmpeg
+    flac
   ];
 
   cmakeFlags = [
@@ -37,7 +41,7 @@ stdenv.mkDerivation {
   ];
 
   meta = with lib; {
-    description = "Tool to extract the two ADC channels and the AUX data from the raw capture.";
+    description = "Tools for the MISRC project.";
     license = licenses.gpl3;
     maintainers = [ "JuniorIsAJitterbug" ];
     homepage = "https://github.com/Stefan-Olt/MISRC";
