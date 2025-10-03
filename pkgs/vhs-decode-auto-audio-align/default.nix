@@ -1,36 +1,21 @@
 { lib
-, stdenv
 , fetchurl
-, unzip
-, makeWrapper
-, mono
+, appimageTools
 }:
-
-stdenv.mkDerivation {
+appimageTools.wrapAppImage rec {
   pname = "vhs-decode-auto-audio-align";
-  version = "1.0.0";
+  version = "1.0.1";
 
-  src = fetchurl {
-    url = "https://gitlab.com/wolfre/vhs-decode-auto-audio-align/-/jobs/6727665225/artifacts/raw/vhs-decode-auto-audio-align_1.0.0.zip";
-    hash = "sha256-kC50CiGTB3J3LA4E6HNZv7tAkY16zeKQRA/u0WtJ3QE=";
+  src = appimageTools.extract {
+    inherit pname version;
+    src = fetchurl {
+      url = "https://gitlab.com/wolfre/vhs-decode-auto-audio-align/-/jobs/11436433645/artifacts/raw/vhs-decode-aaa-1.0.1-x86_64.AppImage";
+      hash = "sha256-HlTY6NnIDwP+eRZg+lp5+xqFd82p+ygzyxZ1WmU2uAE=";
+    };
   };
 
-  nativeBuildInputs = [
-    unzip
-    makeWrapper
-  ];
-
-  installPhase = ''
-    runHook preInstall
-
-    install -m755 -D VhsDecodeAutoAudioAlign.exe $out/bin/.VhsDecodeAutoAudioAlign.exe
-    install -m755 -D Binah.dll $out/bin/Binah.dll
-
-    makeWrapper "${mono}/bin/mono" "$out/bin/VhsDecodeAutoAudioAlign.exe" \
-      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ "$out" ]} \
-      --add-flags $out/bin/.VhsDecodeAutoAudioAlign.exe
-
-    runHook postInstall
+  extraInstallCommands = ''
+    mv $out/bin/${pname} $out/bin/vhs-decode-aaa
   '';
 
   meta = with lib; {
