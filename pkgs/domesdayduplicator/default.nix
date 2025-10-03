@@ -5,10 +5,11 @@
 , pkg-config
 , qt6
 , libusb1
+, ffmpeg
 , ...
 }:
 let
-  rev = "653524f86e7832a88f935655a2f36dcc9c70dea0";
+  rev = "16f702d61e173b4a258febbc076a9f3ee5700a14";
 in
 stdenv.mkDerivation {
   name = "DomesdayDuplicator";
@@ -17,7 +18,7 @@ stdenv.mkDerivation {
     inherit rev;
     owner = "harrypm";
     repo = "DomesdayDuplicator";
-    sha256 = "sha256-V0rpbzG3Pfvgf47P/0ZcvBVIo5CG/X2fNjEqHW2Lu7s=";
+    sha256 = "sha256-i8jUgbppz+1W+NSwA6B2s9UAijMuWeVrciI+0wtxHK4=";
   };
 
   dontWrapQtApps = true;
@@ -34,6 +35,7 @@ stdenv.mkDerivation {
     qt6.qtserialport
     qt6.qtmultimedia
     libusb1
+    ffmpeg
   ];
 
   cmakeFlags = [
