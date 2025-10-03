@@ -13,15 +13,15 @@
 , net-snmp
 }:
 
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   pname = "ltfs";
-  version = "v2.4.7-10514";
+  version = "v2.4.8.1-10519";
 
   src = fetchFromGitHub {
-    rev = "fd41c66ebf8be18bc8a6d88129d935713e03d42e";
+    rev = version;
     owner = "LinearTapeFileSystem";
     repo = "ltfs";
-    sha256 = "sha256-eCshucE56P7WkJ6FweenGQKR5BvLDUJEtfQtGmNDbts=";
+    sha256 = "sha256-8qkYik/8I43BRi7bcNpdMWaliZmyVE8YtXZSNGPmBfE=";
   };
 
   nativeBuildInputs = [
