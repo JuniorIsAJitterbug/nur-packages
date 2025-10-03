@@ -18,7 +18,6 @@ This repo contains packages for vhs-decoding on NixOS.
 - [vapoursynth-neofft3d](https://github.com/HomeOfAviSynthPlusEvolution/neo_FFT3D) - Neo FFT3D (forked from fft3dfilter) is a 3D Frequency Domain filter - strong denoiser and moderate sharpener.
 - [vapoursynth-vsrawsource](https://github.com/JuniorIsAJitterbug/vsrawsource) - Raw format reader for VapourSynth.
 - [amcdx-video-patcher-cli](https://mogurenko.com) - AMCDX Video Patcher CLI.
-- [ab-av1](https://github.com/alexheretic/ab-av1) - AV1 video encoding tool with fast VMAF sampling & automatic encoder crf calculation.
 - [ltfs](https://github.com/LinearTapeFileSystem/ltfs) - Reference LTFS implementation.
 - [stfs](https://github.com/pojntfx/stfs) - Simple Tape File System (STFS), a file system for tapes and tar files.
 - [ezpwd-reed-solomon](https://github.com/pjkundert/ezpwd-reed-solomon) - Reed-Solomon & BCH encoding and decoding, in C++, Javascript & Python.

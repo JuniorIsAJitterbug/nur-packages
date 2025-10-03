@@ -10,7 +10,6 @@
   modules = import ./modules;
   overlays = import ./overlays;
 
-  ab-av1 = pkgs.callPackage ./pkgs/ab-av1 { };
   amcdx-video-patcher-cli = pkgs.callPackage ./pkgs/amcdx-video-patcher-cli { };
   cxadc = pkgs.callPackage ./pkgs/cxadc { kernel = pkgs.linuxPackages.kernel; };
   cxadc-vhs-server = pkgs.callPackage ./pkgs/cxadc-vhs-server { useFlacSox = true; };
