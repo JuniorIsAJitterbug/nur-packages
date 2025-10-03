@@ -9,7 +9,7 @@
 , ...
 }:
 let
-  rev = "9ef881d8904eac22a832186d78a25e53365095cd";
+  rev = "02e72ac62262a1144bfe067287e93b9853562c44";
 in
 stdenv.mkDerivation {
   name = "hsdaoh";
@@ -18,7 +18,7 @@ stdenv.mkDerivation {
     inherit rev;
     owner = "Stefan-Olt";
     repo = "hsdaoh";
-    sha256 = "sha256-0W+eZceXjaUc3KygEqwP6ekGEV0O2nVSLsgJOZ5E4+A=";
+    sha256 = "sha256-s9U1CGEce3BCREfvDnOTu23tFlT0z6C6sfTAojQptQ4=";
   };
 
   nativeBuildInputs = [

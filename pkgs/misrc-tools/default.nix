@@ -10,7 +10,7 @@
 , ...
 }:
 let
-  rev = "misrc_tools-0.4";
+  rev = "misrc_tools-0.5.1";
 in
 stdenv.mkDerivation {
   name = "misrc_tools";
@@ -19,7 +19,7 @@ stdenv.mkDerivation {
     inherit rev;
     owner = "Stefan-Olt";
     repo = "MISRC";
-    sha256 = "sha256-2jk5uoNpKyppGisvQoQrc3Uujd7vmNwGqYoQraDT0ck=";
+    sha256 = "sha256-soafMZ1uhIUf2w3P4jco0qhQkx2zo6q5DJRgOKZJTw8=";
   };
 
   sourceRoot = "source/misrc_tools";
