@@ -27,11 +27,9 @@ let
   pyqt = if useQt6 then python3Packages.pyqt6 else python3Packages.pyqt5;
   qtVersion = if useQt6 then "6" else "5";
 
-  rev = "87329c21688c37d8bd0388b8daddf5405fd07dd4";
-  sha256 = "sha256-hQPyh4tuiLurC8M695ak/iFzsSVkObYUpYbM/lm9kQs=";
-
-  # we need a valid version for SETUPTOOLS_SCM
-  version = "0.3.5";
+  sha256 = "sha256-uDfuDUPu5NgnIAlqa0Uk0hBttcwYp2H9M4ciKeDh/Gk=";
+  version = "0.3.7.1";
+  rev = version;
 
   src = fetchFromGitHub {
     inherit rev sha256;
@@ -75,6 +73,7 @@ let
       soundfile
       sounddevice
       samplerate
+      soxr
     ] ++ lib.optionals enableHiFiGui [ pyqt ];
 
     postFixup = lib.optionalString enableHiFiGui ''
