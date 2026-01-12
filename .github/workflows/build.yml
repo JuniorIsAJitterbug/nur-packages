@@ -34,7 +34,7 @@ jobs:
         uses: cachix/cachix-action@v16
         with:
           name: ${{ matrix.cachixName }}
-          authToken: secrets.CACHIX_AUTH_TOKEN
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
 
       - name: Build
         run: |
