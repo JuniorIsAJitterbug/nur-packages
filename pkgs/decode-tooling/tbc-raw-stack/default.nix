@@ -4,6 +4,7 @@
   pkgs,
   fetchFromGitHub,
   fenix,
+  ...
 }:
 let
   pname = "tbc-raw-stack";

@@ -13,6 +13,7 @@
   yaml-cpp,
   sqlite,
   libpng,
+  ...
 }:
 let
   pname = "decode-orc";

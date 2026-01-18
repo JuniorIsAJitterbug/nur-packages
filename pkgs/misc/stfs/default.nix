@@ -3,6 +3,7 @@
   buildGoModule,
   fetchFromGitHub,
   maintainers,
+  ...
 }:
 let
   pname = "stfs";

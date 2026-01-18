@@ -5,6 +5,7 @@
   fetchFromGitHub,
   autoPatchelfHook,
   alsa-lib,
+  ...
 }:
 let
   pname = "amcdx-video-patcher-cli";

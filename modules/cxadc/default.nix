@@ -2,10 +2,13 @@
   config,
   lib,
   pkgs,
+  ...
 }:
 let
   cfg = config.hardware.cxadc;
-  cxadc = config.boot.kernelPackages.callPackage (import ../../pkgs/decode-hardware/cxadc) { };
+  cxadc = config.boot.kernelPackages.callPackage (import ../../pkgs/decode-hardware/cxadc) {
+    inherit maintainers;
+  };
   maintainers = import ../../maintainers.nix;
 
   cxParameters =
@@ -13,7 +16,7 @@ let
     {
       options = {
         audsel = lib.mkOption {
-          type = lib.types.nullOr (lib.addCheck lib.types.int (l: l >= -1 && l <= 3));
+          type = lib.types.nullOr (lib.types.addCheck lib.types.int (l: l >= -1 && l <= 3));
           default = null;
           description = ''
             Some TV cards have an external multiplexer attached to the CX2388x's GPIO pins to select an audio channel.
@@ -22,7 +25,7 @@ let
         };
 
         center_offset = lib.mkOption {
-          type = lib.types.nullOr (lib.addCheck lib.types.int (l: l >= -255 && l <= 255));
+          type = lib.types.nullOr (lib.types.addCheck lib.types.int (l: l >= -255 && l <= 255));
           default = null;
           description = ''
             This option allows you to manually adjust DC centre offset or the centring of the RF signal you wish to capture.
@@ -38,7 +41,7 @@ let
         };
 
         latency = lib.mkOption {
-          type = lib.types.nullOr (lib.addCheck lib.types.int (l: l >= -255 && l <= 255));
+          type = lib.types.nullOr (lib.types.addCheck lib.types.int (l: l >= -255 && l <= 255));
           default = null;
           description = ''
             The PCI latency timer value for the device.
@@ -46,7 +49,7 @@ let
         };
 
         level = lib.mkOption {
-          type = lib.types.nullOr (lib.addCheck lib.types.int (l: l >= -1 && l <= 31));
+          type = lib.types.nullOr (lib.types.addCheck lib.types.int (l: l >= -1 && l <= 31));
           default = null;
           description = ''
             The fixed digital gain to be applied by the CX2388x.
@@ -71,7 +74,7 @@ let
 
         tenxfsc = lib.mkOption {
           type = lib.types.nullOr (
-            lib.addCheck lib.types.int (l: (l >= 0 && l <= 2) || (l >= 10 && l <= 99) || l == 10022728)
+            lib.types.addCheck lib.types.int (l: (l >= 0 && l <= 2) || (l >= 10 && l <= 99) || l == 10022728)
           );
           default = null;
           description = ''
@@ -80,7 +83,7 @@ let
         };
 
         vmux = lib.mkOption {
-          type = lib.types.nullOr (lib.addCheck lib.types.int (l: l >= 0 && l <= 3));
+          type = lib.types.nullOr (lib.types.addCheck lib.types.int (l: l >= 0 && l <= 3));
           default = null;
           description = ''
             Select physical input to capture.
@@ -147,10 +150,10 @@ in
       };
     };
 
-    services.udev.extraRules = with builtins; ''
-      ${if isString cfg.group then "KERNEL==\"cxadc*\", GROUP=\"${cfg.group}\"" else ""}
+    services.udev.extraRules = ''
+      ${if builtins.isString cfg.group then "KERNEL==\"cxadc*\", GROUP=\"${cfg.group}\"" else ""}
       ${
-        if isString cfg.group then
+        if builtins.isString cfg.group then
           "KERNEL==\"cxadc*\", RUN+=\"${pkgs.stdenv.shell} -c 'chown -R root\:${cfg.group} ${paramPath} && chmod -R 770 ${paramPath}'\""
         else
           ""

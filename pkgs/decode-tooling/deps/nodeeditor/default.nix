@@ -6,6 +6,7 @@
   cmake,
   pkg-config,
   qt6,
+  ...
 }:
 let
   pname = "nodeeditor";

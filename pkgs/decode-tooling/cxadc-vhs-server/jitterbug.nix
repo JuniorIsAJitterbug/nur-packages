@@ -3,6 +3,7 @@
   fetchFromGitHub,
   flac,
   sox,
+  ...
 }:
 let
   pname = "cxadc-vhs-server-jitterbug";

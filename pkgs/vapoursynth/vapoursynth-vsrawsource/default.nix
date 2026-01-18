@@ -4,6 +4,7 @@
   fetchFromGitHub,
   gcc,
   maintainers,
+  ...
 }:
 let
   pname = "vapoursynth-vsrawsource";

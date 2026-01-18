@@ -13,6 +13,7 @@
   libuuid,
   net-snmp,
   maintainers,
+  ...
 
 }:
 let

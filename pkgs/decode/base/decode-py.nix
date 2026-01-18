@@ -1,6 +1,7 @@
 {
   python3Packages,
   ffmpeg,
+  ...
 }:
 python3Packages.buildPythonPackage {
   pname = "decode-py";

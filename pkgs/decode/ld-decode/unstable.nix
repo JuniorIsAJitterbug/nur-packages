@@ -6,6 +6,7 @@
   base-decode-py,
   base-decode-tools,
   ezpwd-reed-solomon,
+  ...
 }:
 let
   pname = "ld-decode-unstable";

@@ -6,6 +6,7 @@
       (import "${fetchTarball "https://github.com/nix-community/fenix/archive/main.tar.gz"}/overlay.nix")
     ];
   },
+  ...
 }:
 let
   modules = import ./modules;

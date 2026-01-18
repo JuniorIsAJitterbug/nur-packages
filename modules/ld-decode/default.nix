@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  ...
 }:
 let
   cfg = config.programs.ld-decode;

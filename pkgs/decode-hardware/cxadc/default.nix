@@ -4,6 +4,7 @@
   stdenv,
   fetchFromGitHub,
   kernel,
+  ...
 }:
 
 let

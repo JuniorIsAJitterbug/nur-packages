@@ -5,6 +5,7 @@
   fixDarwinDylibNames,
   qt,
   maintainers,
+  ...
 }:
 let
   qtVersion = lib.versions.major qt.qtbase.version;

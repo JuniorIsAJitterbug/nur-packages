@@ -8,6 +8,7 @@
   qt6,
   libusb1,
   ffmpeg,
+  ...
 }:
 let
   pname = "domesdayduplicator";

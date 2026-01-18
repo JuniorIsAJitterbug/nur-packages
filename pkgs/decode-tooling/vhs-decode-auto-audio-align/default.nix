@@ -7,6 +7,7 @@
   nuget,
   mono,
   binah,
+  ...
 }:
 let
   pname = "vhs-decode-auto-audio-align";

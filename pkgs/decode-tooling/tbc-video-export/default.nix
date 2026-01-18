@@ -3,6 +3,7 @@
   fetchFromGitHub,
   python3Packages,
   maintainers,
+  ...
 }:
 let
   pname = "tbc-video-export";

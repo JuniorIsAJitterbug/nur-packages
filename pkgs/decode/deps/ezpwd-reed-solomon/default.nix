@@ -3,6 +3,7 @@
   lib,
   stdenv,
   fetchFromGitHub,
+  ...
 }:
 let
   pname = "ezpwd-reed-solomo";

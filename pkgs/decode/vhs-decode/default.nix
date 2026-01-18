@@ -12,6 +12,7 @@
   qt6,
   qwt-qt6,
   ezpwd-reed-solomon,
+  ...
 }:
 let
   pname = "vhs-decode";

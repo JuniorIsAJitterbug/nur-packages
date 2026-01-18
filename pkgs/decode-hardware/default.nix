@@ -1,4 +1,8 @@
-{ pkgs, callPackage }:
+{
+  pkgs,
+  callPackage,
+  ...
+}:
 rec {
   cxadc = callPackage ./cxadc {
     kernel = pkgs.linuxPackages.kernel;

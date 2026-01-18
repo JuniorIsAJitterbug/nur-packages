@@ -9,6 +9,7 @@
   ffmpeg,
   flac,
   maintainers,
+  ...
 }:
 
 let

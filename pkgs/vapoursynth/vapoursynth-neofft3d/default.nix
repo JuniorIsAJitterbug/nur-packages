@@ -8,6 +8,7 @@
   pkg-config,
   tbb,
   git,
+  ...
 }:
 let
   pname = "vapoursynth-neofft3d";

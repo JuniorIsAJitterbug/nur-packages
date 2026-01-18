@@ -2,6 +2,7 @@
   fetchFromGitHub,
   rustPlatform,
   vhs-decode,
+  ...
 }:
 let
   pname = "vhs-decode-unstable";

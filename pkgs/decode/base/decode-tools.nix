@@ -6,6 +6,7 @@
   ffmpeg,
   qt6,
   fftw,
+  ...
 }:
 stdenv.mkDerivation {
   pname = "decode-tools";

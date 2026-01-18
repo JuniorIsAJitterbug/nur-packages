@@ -5,6 +5,7 @@
   buildDotnetModule,
   msbuild,
   nuget,
+  ...
 }:
 let
   pname = "Binah";

@@ -1,6 +1,7 @@
 {
   fetchFromGitHub,
   nodeeditor,
+  ...
 }:
 let
   pname = "nodeeditor";

@@ -9,6 +9,7 @@
   curl,
   jq,
   ffmpeg,
+  ...
 }:
 let
   pname = "cxadc-vhs-server";

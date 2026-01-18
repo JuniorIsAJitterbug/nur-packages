@@ -8,6 +8,7 @@
   pkg-config,
   libusb1,
   libuvc,
+  ...
 }:
 let
   pname = "hsdaoh";

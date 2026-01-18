@@ -6,6 +6,7 @@
   base-decode-py,
   base-decode-tools,
   qwt-qt6,
+  ...
 }:
 let
   pname = "ld-decode";

@@ -2,6 +2,7 @@
   maintainers,
   pkgs,
   callPackage,
+  ...
 }:
 let
   base-decode-py = (pkgs.callPackage ./base/decode-py.nix { });

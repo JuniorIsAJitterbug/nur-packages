@@ -7,6 +7,7 @@
   ninja,
   pkg-config,
   maintainers,
+  ...
 }:
 let
   pname = "vapoursynth-bwdif";
