@@ -10,10 +10,10 @@
 }:
 let
   pname = "ld-decode-unstable";
-  version = "rev7-unstable-2026-01-12";
+  version = "rev7-unstable-2026-01-23";
 
-  rev = "c42e0a0cf831ab7659c436fc4156a5f2cb4958ba";
-  hash = "sha256-/eXf/aiahLf7QudIHPpYl9nzOX+g/1uUxovAsC+EtbE=";
+  rev = "f39e59e18f326b49cc86e7222b59655a0e130cb2";
+  hash = "sha256-1Rq81oId2nYQkarFQggbh+d5cmDbaBkBrM/3Agtj85E=";
 
   src = fetchFromGitHub {
     inherit hash rev;
