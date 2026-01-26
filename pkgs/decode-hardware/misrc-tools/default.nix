@@ -17,7 +17,7 @@ let
   version = "0.5.1";
 
   rev = "misrc_tools-${version}";
-  hash = "sha256-soafMZ1uhIUf2w3P4jco0qhQkx2zo6q5DJRgOKZJTw8=";
+  hash = "sha256-gn7UfCW76Nex+fxTzQOQl6G22WifPF6v7YEXCTqK23Q=";
 in
 stdenv.mkDerivation {
   inherit pname version;
@@ -26,6 +26,10 @@ stdenv.mkDerivation {
     inherit hash rev;
     owner = "Stefan-Olt";
     repo = "MISRC";
+
+    sparseCheckout = [
+      "misrc_tools"
+    ];
   };
 
   sourceRoot = "source/misrc_tools";

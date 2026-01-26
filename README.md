@@ -20,7 +20,7 @@ This repo contains packages for RF decoding on NixOS.
 ### Hardware
 - [cxadc](https://github.com/happycube/cxadc-linux3)
 - [domesdayduplicator](https://github.com/harrypm/DomesdayDuplicator)
-- [misrc-tools](https://github.com/Stefan-Olt/MISRC)
+- [misrc-tools[-unstable]](https://github.com/Stefan-Olt/MISRC)
 
 ### VapourSynth
 - [vapoursynth-bwdif](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Bwdif)
@@ -35,7 +35,7 @@ This repo contains packages for RF decoding on NixOS.
 ### Dependencies
 - [binnah](https://gitlab.com/wolfre/binnah) *(vhs-decode-auto-audio-align)*
 - [ezpwd-reed-solomon](https://github.com/pjkundert/ezpwd-reed-solomon) *(vhs-decode, vhs-decode-unstable, ld-decode-unstable)*
-- [hsdaoh](https://github.com/Stefan-Olt/hsdaoh) *(misrc-tools)*
+- [hsdaoh[-unstable]](https://github.com/Stefan-Olt/hsdaoh) *(misrc-tools, misrc-tools-unstable)*
 - [nodeeditor[-untsable]](https://github.com/paceholder/nodeeditor) *(decode-orc)*
 - [qwt-(qt5|qt6)](https://qwt.sourceforge.net) *(vhs-decode, vhs-decode-unstable, ld-decode)*
 
