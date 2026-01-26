@@ -6,8 +6,8 @@
   ...
 }:
 let
-  pname = "ezpwd-reed-solomo";
-  version = "2024-10-24+" + builtins.substring 0 7 rev;
+  pname = "ezpwd-reed-solomon";
+  version = "1.8.0-unstable-2024-10-2";
 
   rev = "62a490c13f6e057fbf2dc6777fde234c7a19098e";
   hash = "sha256-PC1KaJ7VkB4fKpcLsEqOaMxX1ZiowPWMstVjKx65zjg=";

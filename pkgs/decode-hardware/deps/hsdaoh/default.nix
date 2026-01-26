@@ -12,7 +12,7 @@
 }:
 let
   pname = "hsdaoh";
-  version = "2025-08-15+" + builtins.substring 0 7 rev;
+  version = "0-unstable-2025-08-15";
 
   rev = "02e72ac62262a1144bfe067287e93b9853562c44";
   hash = "sha256-s9U1CGEce3BCREfvDnOTu23tFlT0z6C6sfTAojQptQ4=";

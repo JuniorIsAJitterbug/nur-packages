@@ -7,7 +7,7 @@
 }:
 let
   pname = "cxadc-vhs-server-jitterbug";
-  version = "2024-05-24+" + builtins.substring 0 7 rev;
+  version = "1.4.0-unstable-024-05-24";
 
   rev = "c7969eb48376d9f3a0cd88bf87d2f1c9b030579f";
   hash = "sha256-3DrCcxvCt0ZszC1mqWagqgtjXmHsTqlEsTrTMYjQqUc=";

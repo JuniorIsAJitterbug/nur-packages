@@ -9,10 +9,10 @@
 
 let
   pname = "cxadc";
-  version = "2025-11-14+" + builtins.substring 0 7 rev;
+  version = "0-unstable-2026-01-15";
 
-  rev = "6ae8e3983c2b5f7dfc1f35d9513a57cd27bc37ce";
-  hash = "sha256-wXaeiANbMkSkFGK+xHKu2+YSogVFKilCRCa4b5qgHnw=";
+  rev = "c6f3b23e431cdda2e939d73008e643b54bda56b7";
+  hash = "sha256-6icpVYvRM+N7DG68wDCPxZ57bDLIp03bn1CEUIUlHa4=";
 in
 stdenv.mkDerivation {
   inherit pname version;

@@ -10,7 +10,7 @@
 }:
 let
   pname = "ld-decode-unstable";
-  version = "2026-01-12+" + builtins.substring 0 7 rev;
+  version = "rev7-unstable-2026-01-12";
 
   rev = "c42e0a0cf831ab7659c436fc4156a5f2cb4958ba";
   hash = "sha256-/eXf/aiahLf7QudIHPpYl9nzOX+g/1uUxovAsC+EtbE=";
@@ -42,7 +42,7 @@ let
   );
 in
 symlinkJoin {
-  inherit pname version;
+  inherit pname version src;
 
   paths = [
     ld-decode-py

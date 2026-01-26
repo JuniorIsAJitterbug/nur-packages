@@ -12,7 +12,7 @@
 }:
 let
   pname = "vapoursynth-neofft3d";
-  version = "2025-05-24+" + builtins.substring 0 7 rev;
+  version = "r12-unstable-2025-05-24";
 
   rev = "780dcdfb477c3e5195b1418b15a8b7eed89507ac";
   hash = "sha256-7HcUrL5PNYiyAC3RAVGnrXZG7h7CT7HSCwEV858BNkg=";

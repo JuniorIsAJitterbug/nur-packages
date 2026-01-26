@@ -8,7 +8,7 @@
 }:
 let
   pname = "vapoursynth-vsrawsource";
-  version = "2017-01-31+" + builtins.substring 0 7 rev;
+  version = "0.3.3-unstable-2017-01-31";
 
   rev = "5932753a9e5efa6abdb49b022f120b4703bed772";
   hash = "sha256-bNHuzNf0zmqw8UQFmfdRpJeDsKqITcg+IOD4pS+if/8=";

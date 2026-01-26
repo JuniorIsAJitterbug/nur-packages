@@ -46,7 +46,7 @@ let
   );
 in
 symlinkJoin {
-  inherit pname version;
+  inherit pname version src;
 
   paths = [
     ld-decode-py
