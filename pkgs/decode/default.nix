@@ -1,16 +1,9 @@
 {
-  maintainers,
   pkgs,
-  callPackage,
   ...
 }:
 let
-  base-decode-py = (pkgs.callPackage ./base/decode-py.nix { });
-  base-decode-tools = (pkgs.callPackage ./base/decode-tools.nix { });
-
-  callDecodePackage = pkgs.lib.callPackageWith (
-    pkgs // { inherit maintainers base-decode-py base-decode-tools; }
-  );
+  inherit (pkgs.callPackage ../lib { inherit pkgs; }) callPackage callDecodePackage;
 in
 rec {
   ld-decode = callDecodePackage ./ld-decode {

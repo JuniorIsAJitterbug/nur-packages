@@ -1,7 +1,10 @@
 {
-  callPackage,
+  pkgs,
   ...
 }:
+let
+  inherit (pkgs.callPackage ../lib { inherit pkgs; }) callPackage;
+in
 {
   vapoursynth-bwdif = callPackage ./vapoursynth-bwdif { };
   vapoursynth-neofft3d = callPackage ./vapoursynth-neofft3d { };

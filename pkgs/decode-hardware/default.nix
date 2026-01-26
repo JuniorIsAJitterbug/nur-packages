@@ -1,8 +1,10 @@
 {
   pkgs,
-  callPackage,
   ...
 }:
+let
+  inherit (pkgs.callPackage ../lib { inherit pkgs; }) callPackage;
+in
 rec {
   cxadc = callPackage ./cxadc {
     kernel = pkgs.linuxPackages.kernel;

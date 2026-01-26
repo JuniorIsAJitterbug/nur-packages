@@ -9,15 +9,14 @@
   ...
 }:
 let
+  inherit (pkgs.callPackage ./pkgs/lib { inherit pkgs; }) callPackage;
   modules = import ./modules;
-  maintainers = import ./maintainers.nix;
-  callPackage = pkgs.lib.callPackageWith (pkgs // { inherit maintainers; });
 in
 {
   inherit modules;
 }
-// pkgs.lib.recurseIntoAttrs (callPackage ./pkgs/decode { inherit callPackage; })
-// pkgs.lib.recurseIntoAttrs (callPackage ./pkgs/decode-tooling { inherit callPackage; })
-// pkgs.lib.recurseIntoAttrs (callPackage ./pkgs/decode-hardware { inherit callPackage; })
-// pkgs.lib.recurseIntoAttrs (callPackage ./pkgs/vapoursynth { inherit callPackage; })
-// pkgs.lib.recurseIntoAttrs (callPackage ./pkgs/misc { inherit callPackage; })
+// pkgs.lib.recurseIntoAttrs (callPackage ./pkgs/decode { })
+// pkgs.lib.recurseIntoAttrs (callPackage ./pkgs/decode-tooling { })
+// pkgs.lib.recurseIntoAttrs (callPackage ./pkgs/decode-hardware { })
+// pkgs.lib.recurseIntoAttrs (callPackage ./pkgs/vapoursynth { })
+// pkgs.lib.recurseIntoAttrs (callPackage ./pkgs/misc { })

@@ -1,7 +1,10 @@
 {
-  callPackage,
+  pkgs,
   ...
 }:
+let
+  inherit (pkgs.callPackage ../lib { inherit pkgs; }) callPackage;
+in
 rec {
   cxadc-vhs-server = callPackage ./cxadc-vhs-server { };
   cxadc-vhs-server-jitterbug = callPackage ./cxadc-vhs-server/jitterbug.nix {

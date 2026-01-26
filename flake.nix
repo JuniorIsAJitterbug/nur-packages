@@ -31,9 +31,11 @@
         import ./default.nix {
           pkgs = import nixpkgs {
             inherit system;
+
             overlays = [
               fenix.overlays.default
             ];
+
             config = {
               allowUnfree = true;
             };
