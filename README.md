@@ -23,6 +23,7 @@ This repo contains packages for RF decoding on NixOS.
 - [misrc-tools[-unstable]](https://github.com/Stefan-Olt/MISRC)
 
 ### VapourSynth
+- [vapoursynth-analog](https://github.com/JustinTArthur/vapoursynth-analog)
 - [vapoursynth-bwdif](https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Bwdif)
 - [vapoursynth-neofft3d](https://github.com/HomeOfAviSynthPlusEvolution/neo_FFT3D)
 - [vapoursynth-vsrawsource](https://github.com/JuniorIsAJitterbug/vsrawsource)
