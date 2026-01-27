@@ -5,10 +5,10 @@
 }:
 let
   pname = "nodeeditor-unstable";
-  version = "3.0.12-unstable-2026-01-12";
+  version = "3.0.12-unstable-2026-01-22";
 
-  rev = "e2d4520e50687556fd016b31de722d624229acd6";
-  hash = "sha256-ZN+pXm42iHndEuSlsKcQ/wZVQZ6MV+k3m5vMwpAhrRk=";
+  rev = "f953fcab52f505a74271c5f665d6627dce63b66d";
+  hash = "sha256-tvfrnqu32YXF1SVw/bWhRNVJdmRN+tNh0EMnMYhr6Ko=";
 in
 (nodeeditor.overrideAttrs (
   finalAttrs: prevAttrs: {
