@@ -4,6 +4,7 @@
   stdenv,
   fetchFromGitHub,
   cmake,
+  ninja,
   pkg-config,
   qt6,
   ...
@@ -29,6 +30,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     cmake
     pkg-config
+    ninja
   ];
 
   buildInputs = [

@@ -5,6 +5,7 @@
   fetchFromGitHub,
   cmake,
   pkg-config,
+  ninja,
   alsa-lib,
   curl,
   jq,
@@ -30,6 +31,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     cmake
     pkg-config
+    ninja
     alsa-lib
   ];
 

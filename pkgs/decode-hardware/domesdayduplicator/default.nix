@@ -5,6 +5,7 @@
   fetchFromGitHub,
   cmake,
   pkg-config,
+  ninja,
   qt6,
   libusb1,
   ffmpeg,
@@ -33,6 +34,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     cmake
     pkg-config
+    ninja
   ];
 
   buildInputs = [

@@ -6,6 +6,7 @@
   udevCheckHook,
   cmake,
   pkg-config,
+  ninja,
   libusb1,
   libuvc,
   ...
@@ -30,6 +31,7 @@ stdenv.mkDerivation {
     udevCheckHook
     cmake
     pkg-config
+    ninja
     libusb1
     libuvc
   ];

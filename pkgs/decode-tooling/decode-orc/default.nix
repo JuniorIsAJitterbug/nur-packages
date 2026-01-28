@@ -5,6 +5,7 @@
   fetchFromGitHub,
   cmake,
   pkg-config,
+  ninja,
   qt6,
   nodeeditor-unstable,
   ffmpeg,
@@ -34,6 +35,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     cmake
     pkg-config
+    ninja
     qt6.wrapQtAppsHook
   ];
 

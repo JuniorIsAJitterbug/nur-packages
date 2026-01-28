@@ -4,6 +4,7 @@
   stdenv,
   cmake,
   pkg-config,
+  ninja,
   nasm,
   hsdaoh,
   ffmpeg,
@@ -37,6 +38,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     cmake
     pkg-config
+    ninja
   ];
 
   buildInputs = [

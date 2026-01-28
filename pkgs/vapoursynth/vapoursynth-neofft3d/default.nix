@@ -5,6 +5,7 @@
   fetchFromGitHub,
   vapoursynth,
   cmake,
+  ninja,
   pkg-config,
   tbb,
   git,
@@ -29,6 +30,7 @@ stdenv.mkDerivation {
   nativeBuildInputs = [
     cmake
     pkg-config
+    ninja
   ];
 
   buildInputs = [
