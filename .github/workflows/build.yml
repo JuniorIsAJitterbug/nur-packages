@@ -64,8 +64,8 @@ jobs:
           nix run github:Mic92/nix-fast-build
           --
           --no-nom
-          ${{ inputs.skip_cached && '--skip-cached' }}
-          ${{ inputs.update_cachix && format('--cachix-cache "{0}"', matrix.cachix_name) }}
+          ${{ inputs.skip_cached && '--skip-cached' || '' }}
+          ${{ inputs.update_cachix && format('--cachix-cache "{0}"', matrix.cachix_name) || ''}}
           --flake .#checks."${{ matrix.arch }}-${{ matrix.kernel }}"
 
       - name: Update NUR

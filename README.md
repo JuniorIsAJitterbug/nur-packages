@@ -40,7 +40,6 @@ This repo contains packages for RF decoding on NixOS.
 - [nodeeditor[-untsable]](https://github.com/paceholder/nodeeditor) *(decode-orc)*
 - [qwt-(qt5|qt6)](https://qwt.sourceforge.net) *(vhs-decode, vhs-decode-unstable, ld-decode)*
 
-
 ## Modules
 - [cxadc](modules/cxadc/README.md)
 - [ld-decode](modules/ld-decode/README.md)

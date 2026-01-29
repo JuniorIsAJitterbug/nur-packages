@@ -4,7 +4,7 @@
   ...
 }:
 python3Packages.buildPythonPackage {
-  pname = "decode-py";
+  pname = "ld-decode-py";
 
   pyproject = true;
 
@@ -17,11 +17,14 @@ python3Packages.buildPythonPackage {
   ];
 
   propagatedBuildInputs = [
-    python3Packages.numpy
-    python3Packages.jupyter
-    python3Packages.numba
-    python3Packages.pandas
-    python3Packages.scipy
+    python3Packages.av
     python3Packages.matplotlib
+    python3Packages.numpy
+    python3Packages.numba
+    python3Packages.scipy
+  ];
+
+  pythonImportsCheck = [
+    "lddecode"
   ];
 }

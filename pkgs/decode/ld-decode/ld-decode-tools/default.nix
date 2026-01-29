@@ -7,10 +7,11 @@
   ffmpeg,
   qt6,
   fftw,
+  ezpwd-reed-solomon,
   ...
 }:
 stdenv.mkDerivation {
-  pname = "decode-tools";
+  pname = "ld-decode-tools";
 
   nativeBuildInputs = [
     cmake
@@ -23,13 +24,13 @@ stdenv.mkDerivation {
     fftw
     qt6.qtbase
     qt6.wrapQtAppsHook
+    ezpwd-reed-solomon
   ]
   ++ lib.optional stdenv.isLinux [
     qt6.qtwayland
   ];
 
   cmakeFlags = [
-    (lib.cmakeBool "BUILD_PYTHON" false)
     (lib.cmakeBool "BUILD_TESTING" false)
   ];
 }
