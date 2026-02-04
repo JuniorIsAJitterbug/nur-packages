@@ -12,7 +12,6 @@ This repo contains packages for RF decoding on NixOS.
 
 ### Tools
 - [cxadc-vhs-server[-jitterbug]](https://github.com/namazso/cxadc_vhs_server)
-- [decode-orc](https://github.com/simoninns/decode-orc)
 - [tbc-raw-stack](https://github.com/namazso/tbc-raw-stack)
 - [tbc-video-export](https://github.com/JuniorIsAJitterbug/tbc-video-export)
 - [vhs-decode-auto-audio-align](https://gitlab.com/wolfre/vhs-decode-auto-audio-align)
@@ -37,7 +36,6 @@ This repo contains packages for RF decoding on NixOS.
 - [binnah](https://gitlab.com/wolfre/binnah) *(vhs-decode-auto-audio-align)*
 - [ezpwd-reed-solomon](https://github.com/pjkundert/ezpwd-reed-solomon) *(vhs-decode, vhs-decode-unstable, ld-decode-unstable)*
 - [hsdaoh[-unstable]](https://github.com/Stefan-Olt/hsdaoh) *(misrc-tools, misrc-tools-unstable)*
-- [nodeeditor[-untsable]](https://github.com/paceholder/nodeeditor) *(decode-orc)*
 - [qwt-(qt5|qt6)](https://qwt.sourceforge.net) *(vhs-decode, vhs-decode-unstable, ld-decode)*
 
 ## Modules
