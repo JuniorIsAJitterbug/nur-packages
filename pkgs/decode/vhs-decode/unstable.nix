@@ -11,11 +11,11 @@
 }:
 let
   pname = "vhs-decode-unstable";
-  version = "0.3.8.1-unstable-2026-01-29";
+  version = "0.3.8.1-unstable-2026-02-02";
   SETUPTOOLS_SCM_PRETEND_VERSION = ("0.3.8.1+" + builtins.substring 0 7 rev);
 
-  rev = "dcab433f3bf0a304a680e105efff529cd9da4b07";
-  hash = "sha256-fU2IwQUk3gtZdKrr3tFLZfWlYVYjSLESMCGdqn8lqOQ=";
+  rev = "058d2f48951791b07d38a0b047f84ef3050cdc21";
+  hash = "sha256-AEpv4Pu+7JIPZi9XJb1QmmWRotfQSwl1Cp3onqhsuEg=";
   cargoHash = "sha256-fKAqjvx4Gqa426OyR2qEPXUPEneXGOT1GqOMFDol0Zc=";
 
   rustToolchain = fenix.default.toolchain;
