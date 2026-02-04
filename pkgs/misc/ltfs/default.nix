@@ -32,6 +32,10 @@ stdenv.mkDerivation {
     repo = "ltfs";
   };
 
+  env.NIX_CFLAGS_COMPILE = toString [
+    "-Wno-error=declaration-after-statement"
+  ];
+
   nativeBuildInputs = [
     autoreconfHook
     autoconf
