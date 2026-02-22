@@ -2,7 +2,8 @@
   description = "JuniorIsAJitterbug's nur-packages";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # pin until https://github.com/NixOS/nixpkgs/pull/493988 is merged
+    nixpkgs.url = "github:NixOS/nixpkgs/?ref=0182a361324364ae3f436a63005877674cf45efb";
     fenix = {
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
