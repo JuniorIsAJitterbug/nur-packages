@@ -18,6 +18,9 @@ rec {
   vhs-decode-unstable = callPackage ./vhs-decode/unstable.nix {
     inherit ezpwd-reed-solomon qwt-qt6;
   };
+  vhs-decode-testing = callPackage ./vhs-decode/testing.nix {
+    inherit ezpwd-reed-solomon;
+  };
 
   # deps
   ezpwd-reed-solomon = callPackage ./deps/ezpwd-reed-solomon { };
