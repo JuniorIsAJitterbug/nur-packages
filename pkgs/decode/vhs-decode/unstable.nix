@@ -84,6 +84,10 @@ symlinkJoin {
       (
         finalAttrs: prevAttrs: {
           inherit src version;
+
+          buildInputs = prevAttrs.buildInputs ++ [
+            qwt-qt6
+          ];
         }
       )
     )

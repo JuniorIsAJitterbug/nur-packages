@@ -7,7 +7,6 @@
   ffmpeg,
   qt6,
   fftw,
-  qwt-qt6,
   ezpwd-reed-solomon,
   ...
 }:
@@ -25,7 +24,6 @@ stdenv.mkDerivation {
     fftw
     qt6.qtbase
     qt6.wrapQtAppsHook
-    qwt-qt6
     ezpwd-reed-solomon
   ]
   ++ lib.optional stdenv.isLinux [
@@ -34,6 +32,7 @@ stdenv.mkDerivation {
 
   cmakeFlags = [
     (lib.cmakeFeature "USE_QT_VERSION" "6")
+    (lib.cmakeFeature "EZPWD_DIR" "${(lib.getLib ezpwd-reed-solomon)}/include")
     (lib.cmakeBool "BUILD_PYTHON" false)
     (lib.cmakeBool "BUILD_TESTING" false)
   ];
