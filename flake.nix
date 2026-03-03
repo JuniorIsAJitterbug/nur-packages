@@ -4,17 +4,12 @@
   inputs = {
     # pin until https://github.com/NixOS/nixpkgs/pull/493988 is merged
     nixpkgs.url = "github:NixOS/nixpkgs/?ref=0182a361324364ae3f436a63005877674cf45efb";
-    fenix = {
-      url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      fenix,
     }:
     let
       systems = [
@@ -32,10 +27,6 @@
         import ./default.nix {
           pkgs = import nixpkgs {
             inherit system;
-
-            overlays = [
-              fenix.overlays.default
-            ];
 
             config = {
               allowUnfree = true;
@@ -63,14 +54,6 @@
     extra-experimental-features = [
       "nix-command"
       "flakes"
-    ];
-
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-    ];
-
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
 }

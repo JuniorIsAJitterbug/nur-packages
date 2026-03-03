@@ -4,19 +4,15 @@
   pkgs,
   fetchFromGitHub,
   symlinkJoin,
-  fenix,
+  rustPlatform,
+  rustc,
+  cargo,
   ezpwd-reed-solomon,
   ...
 }:
 let
   pname = "vhs-decode-testing";
   version = "0.3.8.1-unstable-2026-02-26";
-
-  rustToolchain = fenix.default.toolchain;
-  rustPlatform = pkgs.makeRustPlatform {
-    cargo = rustToolchain;
-    rustc = rustToolchain;
-  };
 
   pySrc =
     let
@@ -82,7 +78,8 @@ symlinkJoin {
 
       nativeBuildInputs = [
         rustPlatform.cargoSetupHook
-        rustToolchain
+        rustc
+        cargo
       ];
 
       propagatedBuildInputs =

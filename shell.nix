@@ -13,7 +13,9 @@
       cachix
       patchelf
       nurl
+      nix-update
       nix-output-monitor
+      jq
     ];
   };
 }

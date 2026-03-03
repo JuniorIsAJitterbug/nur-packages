@@ -1,11 +1,5 @@
 {
-  system ? builtins.currentSystem,
-  pkgs ? import <nixpkgs> {
-    inherit system;
-    overlays = [
-      (import "${fetchTarball "https://github.com/nix-community/fenix/archive/main.tar.gz"}/overlay.nix")
-    ];
-  },
+  pkgs ? import <nixpkgs> { },
   ...
 }:
 let

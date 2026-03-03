@@ -1,9 +1,8 @@
 {
   maintainers,
   lib,
-  pkgs,
   fetchFromGitHub,
-  fenix,
+  rustPlatform,
   ...
 }:
 let
@@ -13,12 +12,6 @@ let
   rev = version;
   hash = "sha256-wJVfONhmzMwfrJq/jd63PeW7iPZ3u3hvHvBeP7wfoHI=";
   cargoHash = "sha256-8HRguv0/GnCkmSDQ8WnNNKMFmf4FihaTP7leNWTFzdk=";
-
-  rustToolchain = fenix.default.toolchain;
-  rustPlatform = pkgs.makeRustPlatform {
-    cargo = rustToolchain;
-    rustc = rustToolchain;
-  };
 in
 rustPlatform.buildRustPackage {
   inherit pname version cargoHash;
@@ -28,6 +21,12 @@ rustPlatform.buildRustPackage {
     owner = "namazso";
     repo = "tbc-raw-stack";
   };
+
+  postPatch = ''
+    substituteInPlace src/main.rs \
+      --replace-fail "#![feature(stdarch_x86_avx512)]" "" \
+      --replace-fail "#![feature(avx512_target_feature)]" ""
+  '';
 
   meta = {
     inherit maintainers;
