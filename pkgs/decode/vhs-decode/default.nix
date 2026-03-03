@@ -4,7 +4,9 @@
   pkgs,
   fetchFromGitHub,
   symlinkJoin,
-  fenix,
+  rustPlatform,
+  rustc,
+  cargo,
   qwt-qt6,
   ezpwd-reed-solomon,
   ...
@@ -16,12 +18,6 @@ let
   rev = version;
   hash = "sha256-fkbJPDLWKtoyim3WpnrlcC2P4U5L/G19uLdP3fy+INg=";
   cargoHash = "sha256-fKAqjvx4Gqa426OyR2qEPXUPEneXGOT1GqOMFDol0Zc=";
-
-  rustToolchain = fenix.default.toolchain;
-  rustPlatform = pkgs.makeRustPlatform {
-    cargo = rustToolchain;
-    rustc = rustToolchain;
-  };
 
   src = fetchFromGitHub {
     inherit hash rev;
@@ -60,7 +56,8 @@ symlinkJoin {
 
       nativeBuildInputs = [
         rustPlatform.cargoSetupHook
-        rustToolchain
+        rustc
+        cargo
       ];
     }))
 
