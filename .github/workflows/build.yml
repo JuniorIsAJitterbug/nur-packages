@@ -1,26 +1,22 @@
 name: Build and populate cache
 
 on:
-  pull_request:
   push:
+    branches:
+      - main
+
   workflow_dispatch:
     inputs:
-      update_cachix:
-        description: Update cachix
+      skip_cachix_push:
+        description: Skip cachix push
         required: true
-        default: true
+        default: false
         type: boolean
 
-      update_nur:
-        description: Update NUR
+      skip_updating_nur:
+        description: Skip updating NUR
         required: true
-        default: true
-        type: boolean
-
-      skip_cached:
-        description: Skip builds present in binary cache
-        required: true
-        default: true
+        default: false
         type: boolean
 
 jobs:
@@ -52,22 +48,21 @@ jobs:
             accept-flake-config = true
 
       - name: Setup cachix
-        if: ${{ inputs.update_cachix }}
         uses: cachix/cachix-action@v16
         with:
           name: ${{ matrix.cachix_name }}
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          skipPush: ${{ !inputs.update_cachix }}
+          skipPush: ${{ (github.event_name != 'workflow_dispatch' && 'false') || inputs.skip_cachix_push }}
 
       - name: Build
         run: >
           nix run github:Mic92/nix-fast-build
           --
           --no-nom
-          ${{ (inputs.skip_cached && '--skip-cached') || '' }}
-          ${{ (inputs.update_cachix && format('--cachix-cache "{0}"', matrix.cachix_name)) || ''}}
+          --skip-cached
+          ${{ ((github.event_name != 'workflow_dispatch' || !inputs.skip_cachix_push) && format('--cachix-cache "{0}"', matrix.cachix_name)) || ''}}
           --flake .#checks."${{ matrix.arch }}-${{ matrix.kernel }}"
 
       - name: Update NUR
-        if: ${{ inputs.update_nur }}
+        if: ${{ (github.event_name != 'workflow_dispatch' && 'true') || !inputs.skip_updating_nur }}
         run: curl -XPOST "https://nur-update.nix-community.org/update?repo=${{ matrix.nur_repo }}"
