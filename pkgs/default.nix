@@ -33,8 +33,14 @@ let
   nodeeditor-unstable = callPackage ./nodeeditor-unstable { inherit nodeeditor; };
   stfs = callPackage ./stfs { };
   tbc-raw-stack = callPackage ./tbc-raw-stack { };
-  tbc-tools = callPackage ./tbc-tools { inherit ezpwd-reed-solomon; };
-  tbc-tools-unstable = callPackage ./tbc-tools-unstable { inherit tbc-tools; };
+  tbc-tools = callPackage ./tbc-tools {
+    inherit ezpwd-reed-solomon;
+    cudaSupport = false;
+  };
+  tbc-tools-unstable = callPackage ./tbc-tools-unstable {
+    inherit tbc-tools;
+    cudaSupport = false;
+  };
   tbc-video-export = callPackage ./tbc-video-export { };
   vapoursynth-analog = callPackage ./vapoursynth-analog { };
   vapoursynth-bwdif = callPackage ./vapoursynth-bwdif { };
