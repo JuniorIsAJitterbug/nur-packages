@@ -5,10 +5,10 @@
 }:
 let
   pname = "tbc-tools-unstable";
-  version = "3.1.0-unstable-2026-05-14";
+  version = "3.1.0-unstable-2026-05-20";
 
-  rev = "0fa2762ba096f06e0737da85f4ec5aa23c2922c2";
-  hash = "sha256-RBKSO2RN6LRA/Ft6BrQQWqTtAYGJ25623YVXIPBjM+c= ";
+  rev = "d92b50ab55731c54e6a92bc0c157e3747273aa80";
+  hash = "sha256-hUb/TMOqXS0s8ov4XbJfUnOSdz91sfwbLnl1ljKNE9A=";
 in
 (tbc-tools.overrideAttrs (
   finalAttrs: prevAttrs: {
@@ -16,7 +16,7 @@ in
 
     src = fetchFromGitHub {
       inherit hash rev;
-      inherit (prevAttrs.src) owner repo;
+      inherit (prevAttrs.src) owner repo sparseCheckout;
     };
   }
 ))
