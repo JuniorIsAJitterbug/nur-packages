@@ -17,6 +17,7 @@ This repo contains packages for RF decoding on NixOS.
 - [ld-decode[-unstable]](https://github.com/happycube/ld-decode) [^1]
 
 ### Tools
+- [cc-decoder](https://github.com/eshaz/cc_decoder)
 - [cxadc-vhs-server[-jitterbug]](https://github.com/namazso/cxadc_vhs_server)
 - [decode-orc[-unstable]](https://github.com/simoninns/decode-orc) [^1]
 - [ld-decode-tools[-unstable]](https://github.com/simoninns/ld-decode-tools) [^1]
