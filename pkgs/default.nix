@@ -7,6 +7,7 @@ let
 
   amcdx-video-patcher-cli = callPackage ./amcdx-video-patcher-cli { };
   binah = callPackage ./binah { };
+  cc-decoder = callPackage ./cc-decoder { };
   cxadc = callPackage ./cxadc { kernel = pkgs.linuxPackages.kernel; };
   cxadc-vhs-server = callPackage ./cxadc-vhs-server { };
   cxadc-vhs-server-jitterbug = callPackage ./cxadc-vhs-server-jitterbug { inherit cxadc-vhs-server; };
@@ -57,6 +58,7 @@ in
   inherit
     amcdx-video-patcher-cli
     binah
+    cc-decoder
     cxadc
     cxadc-vhs-server
     cxadc-vhs-server-jitterbug
