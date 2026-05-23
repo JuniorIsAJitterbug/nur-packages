@@ -1,4 +1,4 @@
-# nur-packages
+# Jitterbug's nur-packages
 This repo contains packages for RF decoding on NixOS.
 
 [![Actions Badge]](../../actions/workflows/build.yml)
@@ -13,7 +13,7 @@ This repo contains packages for RF decoding on NixOS.
 
 ## Packages
 ### Decoders
-- [vhs-decode[-unstable]](https://github.com/oyvindln/vhs-decode) [^1]
+- [vhs-decode[-unstable|-legacy]](https://github.com/oyvindln/vhs-decode) [^1]
 - [ld-decode[-unstable]](https://github.com/happycube/ld-decode) [^1]
 
 ### Tools
@@ -46,6 +46,7 @@ This repo contains packages for RF decoding on NixOS.
 - [ezpwd-reed-solomon](https://github.com/pjkundert/ezpwd-reed-solomon) *(ld-decode-tools, tbc-tools[-unstable])*
 - [hsdaoh[-misrc[-unstable]]](https://github.com/Stefan-Olt/hsdaoh) *(misrc-tools[-unstable])*
 - [nodeeditor[-unstable]](https://github.com/paceholder/nodeeditor) *(decode-orc[-unstable])*
+- [qwt-[qt5|qt6]](https://qwt.sourceforge.net) *(vhs-decode-legacy)*
 
 ## Modules
 - [cxadc](modules/cxadc/README.md)

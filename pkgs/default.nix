@@ -31,6 +31,8 @@ let
   };
   nodeeditor = callPackage ./nodeeditor { };
   nodeeditor-unstable = callPackage ./nodeeditor-unstable { inherit nodeeditor; };
+  qwt-qt5 = callPackage ./qwt { qt = pkgs.qt5; };
+  qwt-qt6 = callPackage ./qwt { qt = pkgs.qt6; };
   stfs = callPackage ./stfs { };
   tbc-raw-stack = callPackage ./tbc-raw-stack { };
   tbc-tools = callPackage ./tbc-tools {
@@ -48,6 +50,7 @@ let
   vapoursynth-vsrawsource = callPackage ./vapoursynth-vsrawsource { };
   vhs-decode = callPackage ./vhs-decode { };
   vhs-decode-auto-audio-align = callPackage ./vhs-decode-auto-audio-align { inherit binah; };
+  vhs-decode-legacy = callPackage ./vhs-decode-legacy { inherit vhs-decode tbc-tools qwt-qt6; };
   vhs-decode-unstable = callPackage ./vhs-decode-unstable { inherit vhs-decode; };
 in
 {
@@ -72,6 +75,8 @@ in
     misrc-tools-unstable
     nodeeditor
     nodeeditor-unstable
+    qwt-qt5
+    qwt-qt6
     stfs
     tbc-raw-stack
     tbc-tools
@@ -83,6 +88,7 @@ in
     vapoursynth-vsrawsource
     vhs-decode
     vhs-decode-auto-audio-align
+    vhs-decode-legacy
     vhs-decode-unstable
     ;
 }
