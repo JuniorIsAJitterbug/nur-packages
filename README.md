@@ -51,6 +51,5 @@ This repo contains packages for RF decoding on NixOS.
 
 ## Modules
 - [cxadc](modules/cxadc/README.md)
-- [decode](modules/decode/README.md)
 
 [^1]: Upstream project provides flake
